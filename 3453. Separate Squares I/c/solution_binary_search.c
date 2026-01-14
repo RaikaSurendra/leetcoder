@@ -129,32 +129,33 @@ double separate_squares_optimized(const Square * restrict squares, const int n) 
 }
 
 /**
+ * LeetCode submission function - matches expected signature
  * Wrapper for standard int[][] input format
  * Converts to cache-friendly Square struct
  */
-double separate_squares(int** square_array, int n) {
+double separateSquares(int** squares, int squaresSize, int* squaresColSize) {
     // Stack allocation for small n, heap for large
-    Square* squares;
+    Square* square_structs;
     Square stack_squares[1024]; // 12KB on stack
     
-    if (n <= 1024) {
-        squares = stack_squares;
+    if (squaresSize <= 1024) {
+        square_structs = stack_squares;
     } else {
-        squares = (Square*)malloc(n * sizeof(Square));
-        if (!squares) return -1.0; // Error
+        square_structs = (Square*)malloc(squaresSize * sizeof(Square));
+        if (!square_structs) return -1.0; // Error
     }
     
     // Convert input format
-    for (int i = 0; i < n; i++) {
-        squares[i].x = square_array[i][0];
-        squares[i].y = square_array[i][1];
-        squares[i].l = square_array[i][2];
+    for (int i = 0; i < squaresSize; i++) {
+        square_structs[i].x = squares[i][0];
+        square_structs[i].y = squares[i][1];
+        square_structs[i].l = squares[i][2];
     }
     
-    double result = separate_squares_optimized(squares, n);
+    double result = separate_squares_optimized(square_structs, squaresSize);
     
-    if (n > 1024) {
-        free(squares);
+    if (squaresSize > 1024) {
+        free(square_structs);
     }
     
     return result;
