@@ -1,14 +1,10 @@
-package com.leetcode.separatesquaresdup;
+package com.leetcode.separatesquares;
 
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
-
-import com.leetcode.separatesquares.Solution1BruteForce;
-import com.leetcode.separatesquares.Solution2BinarySearch;
-import com.leetcode.separatesquares.Solution3Mathematical;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;

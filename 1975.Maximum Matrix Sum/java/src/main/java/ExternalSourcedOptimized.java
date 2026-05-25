@@ -196,7 +196,7 @@ public class ExternalSourcedOptimized {
      */
     public long maxMatrixSum(int[][] matrix) {
         // Find dimension (though not strictly needed for enhanced for-loop)
-        int n = matrix.length;
+        @SuppressWarnings("unused") int n = matrix.length;
 
         // Track smallest absolute value seen (will be negative if odd negatives)
         // Initialize to max constraint + 1 to ensure any matrix value is smaller

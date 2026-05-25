@@ -1,3 +1,5 @@
+package com.leetcode.separatesquares;
+
 import java.util.*;
 
 /**

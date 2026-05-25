@@ -1,3 +1,5 @@
+package com.leetcode.separatesquares;
+
 /**
  * LeetCode 3453: Separate Squares I - Approach 2 (Binary Search) ⭐ RECOMMENDED
  * 
